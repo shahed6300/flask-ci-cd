@@ -47,4 +47,4 @@ jobs:
           application_name: "My-PYTHON-APP"
           environment_name: "MY-ENV"
           version_label: "v1-${{ github.run_id }}"
-          region: "us-east-1"
+          region: "ap-south-1"

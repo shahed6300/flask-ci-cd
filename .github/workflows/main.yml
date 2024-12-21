@@ -37,3 +37,14 @@ jobs:
     - name: Deploy
       run: |
         echo "Deploying app (this is a placeholder step)"
+    
+ # Deploy to AWS Elastic Beanstalk
+    - name: Deploy to AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: "My-PYTHON-APP"
+          environment_name: "MY-ENV"
+          version_label: "v1-${{ github.run_id }}"
+          region: "us-east-1"
